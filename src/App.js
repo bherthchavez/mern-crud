@@ -9,14 +9,14 @@ const App = () => {
   const [updateId, setUpdateId] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/get`).then((res) => {
+    axios.get(`https://mern-crud-api-penn.onrender.com/api/get`).then((res) => {
       // console.log(res.data);
       setTasks(res.data);
     });
   }, [updateUI]);
 
   const addTask = () => {
-    axios.post(`http://localhost:5000/api/save`, { task: input }).then((res) => {
+    axios.post(`https://mern-crud-api-penn.onrender.com/api/save`, { task: input }).then((res) => {
       // console.log(res.data);
       setInput("");
       setUpdateUI((prevState) => !prevState);
@@ -30,7 +30,7 @@ const App = () => {
   };
 
   const updateTask = () => {
-    axios.put(`http://localhost:5000/api/update/${updateId}`, { task: input }).then((res) => {
+    axios.put(`https://mern-crud-api-penn.onrender.com/api/update/${updateId}`, { task: input }).then((res) => {
       // console.log(res.data);
       setUpdateUI((prevState) => !prevState);
       setUpdateId(null);

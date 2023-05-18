@@ -5,7 +5,7 @@ import axios from "axios";
 
 const List = ({ id, task, setUpdateUI, updateMode }) => {
   const removeTask = () => {
-    axios.delete(`http://localhost:5000/api/delete/${id}`).then((res) => {
+    axios.delete(`https://mern-crud-api-penn.onrender.com/api/delete/${id}`).then((res) => {
       // console.log(res);
       setUpdateUI((prevState) => !prevState);
     });
